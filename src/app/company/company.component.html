@@ -1,0 +1,25 @@
+
+<table class="table table-bordered mt-3">
+    <thead class="thead-light">
+        <tr>
+        <td>No</td>
+        <td>CompanyName</td>
+        <td>CompanyLocation</td>
+        <td *appPermission="'edit'">Edit</td>
+        <td *appPermission="'delete'">Delete</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let i of CompanyData;index as no">
+            <td>{{no+1}}</td>
+            <td>{{i.comname}}</td>
+            <td>{{i.location}}</td>
+            <td *appPermission="'edit'">
+                <button class="btn btn-success" *appPermission="'edit'">Edit</button>
+            </td>
+            <td *appPermission="'delete'">
+                <button class="btn btn-success" (click)="DeleteCmp(no)" *appPermission="'delete'">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

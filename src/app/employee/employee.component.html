@@ -1,0 +1,35 @@
+<table class="table table-bordered mt-3">
+    <thead class="thead-light">
+        <tr>
+            <td>No</td>
+            <td>UserName</td>
+            <td>Password</td>
+            <td *appPermission="'edit'">Edit</td>
+            <td *appPermission="'delete'">Delete</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let Employee of Empmaindata;index as no">
+            <td>{{no+1}}</td>
+            <td>
+                <div>
+                    {{Employee.username}}
+                </div>
+            </td>
+
+            <td>{{Employee.password}}</td>
+            <td *appPermission="'edit'">
+                <button class="btn btn-success" (click)="Editdata(Employee)">Edit</button>
+            </td>
+            <td *appPermission="'delete'">
+                <button class="btn btn-success" (click)="DeleteEmp(no)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="form-box" *ngIf="flag">
+    <input type="text" placeholder="UserName" [(ngModel)]="currentUserName">
+    <input type="text" placeholder="Password" [(ngModel)]="currentUserPassword">
+    <button (click)="onHide()">Update</button>
+</div>

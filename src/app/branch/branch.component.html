@@ -1,0 +1,27 @@
+
+<table class="table table-bordered mt-3">
+    <thead class="thead-light">
+        <tr>
+        <td>No</td>
+        <td>BranchName</td>
+        <td>TotalMember</td>
+        <td *appPermission="'edit'">Edit</td>
+        <td *appPermission="'delete'">Delete</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let branchdata of BranchMainData;index as no">
+            <td>{{no+1}}</td>
+            <td>
+                {{branchdata.branchname}}
+            </td>
+            <td>{{branchdata.TotalMember}}</td>
+            <td *appPermission="'edit'">
+                <button class="btn btn-success" (click)="onEdit(branchdata)" >Edit</button>
+            </td>
+            <td *appPermission="'delete'">
+                <button class="btn btn-success" (click)="DeleteBranch(no)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
