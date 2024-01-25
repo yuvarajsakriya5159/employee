@@ -13,6 +13,8 @@ import { HomeComponent } from './home/home.component';
 import { MainServiceService } from './main-service.service';
 import { PermissionDirective } from './Directive/permission.directive';
 import { CommonModule } from '@angular/common';
+import { SignUpComponent } from './sign-up/sign-up.component';
+ 
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { CommonModule } from '@angular/common';
     CompanyComponent,
     EmployeeComponent,
     HomeComponent,
-    PermissionDirective
+    PermissionDirective,
+    SignUpComponent,
+    
   ],
   imports: [
     BrowserModule,

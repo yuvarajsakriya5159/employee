@@ -27,7 +27,7 @@
 </table>
 
 <div class="form-box" *ngIf="flag">
-    <input type="text" placeholder="UserName" [(ngModel)]="currentBranchName">
+    <input type="text" placeholder="UserName" [(ngModel)]="currentBranchName" >
     <input type="text" placeholder="Password" [(ngModel)]="currentTotalMember">
-    <button (click)="onHide()">Update</button>
+    <button (click)="onHide()" class="btn btn-success">Update</button>
 </div>
