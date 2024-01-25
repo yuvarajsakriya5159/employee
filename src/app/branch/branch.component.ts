@@ -11,13 +11,34 @@ export class BranchComponent {
   constructor(private mainServiceService:MainServiceService){
 
   }
+
+  currentBranchName: string = "";
+  currentTotalMember: string = "";
+  flag : boolean = false;
+  currentDataObj : any;
+
   BranchMainData:any=this.mainServiceService.BranchData;
 
   DeleteBranch(deleteme:number){
     this.BranchMainData.splice(deleteme,1)
     }
 
-    onEdit(item:any){
-      item.isEdit=true;
-    }
+   Editdata(data: any) {
+    this.currentBranchName = data.branchname;
+    this.currentTotalMember = data.TotalMember;
+    this.currentDataObj = data;
+
+    this.flag = true;
+  }
+
+  onHide() {
+    this.currentDataObj.branchname = this.currentBranchName;
+    this.currentDataObj.TotalMember = this.currentTotalMember;
+
+    this.currentBranchName = "";
+    this.currentTotalMember = "";
+
+    this.flag = false;
+  }
 }
+

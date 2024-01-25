@@ -17,7 +17,7 @@
             </td>
             <td>{{branchdata.TotalMember}}</td>
             <td *appPermission="'edit'">
-                <button class="btn btn-success" (click)="onEdit(branchdata)" >Edit</button>
+                <button class="btn btn-success" (click)="Editdata(branchdata)" >Edit</button>
             </td>
             <td *appPermission="'delete'">
                 <button class="btn btn-success" (click)="DeleteBranch(no)">Delete</button>
@@ -25,3 +25,9 @@
         </tr>
     </tbody>
 </table>
+
+<div class="form-box" *ngIf="flag">
+    <input type="text" placeholder="UserName" [(ngModel)]="currentBranchName">
+    <input type="text" placeholder="Password" [(ngModel)]="currentTotalMember">
+    <button (click)="onHide()">Update</button>
+</div>

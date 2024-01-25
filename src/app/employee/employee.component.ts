@@ -28,17 +28,17 @@ export class EmployeeComponent {
     this.currentUserPassword = data.password;
     this.currentDataObj = data;
 
-    this.flag = true;
+     this.flag = true;
   }
 
-  onHide() {
+  onUpdate() {
     this.currentDataObj.username = this.currentUserName;
     this.currentDataObj.password = this.currentUserPassword;
 
     this.currentUserName = "";
     this.currentUserPassword = "";
 
-    this.flag = false;
+     this.flag = false;
   }
 }
 

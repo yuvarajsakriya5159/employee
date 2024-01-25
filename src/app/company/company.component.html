@@ -10,12 +10,12 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let i of CompanyData;index as no">
+        <tr *ngFor="let Company of CompanyData;index as no">
             <td>{{no+1}}</td>
-            <td>{{i.comname}}</td>
-            <td>{{i.location}}</td>
+            <td>{{Company.comname}}</td>
+            <td>{{Company.location}}</td>
             <td *appPermission="'edit'">
-                <button class="btn btn-success" *appPermission="'edit'">Edit</button>
+                <button class="btn btn-success" *appPermission="'edit'" (click)="Editdata(Company)">Edit</button>
             </td>
             <td *appPermission="'delete'">
                 <button class="btn btn-success" (click)="DeleteCmp(no)" *appPermission="'delete'">Delete</button>
@@ -23,3 +23,9 @@
         </tr>
     </tbody>
 </table>
+
+<div class="form-box" *ngIf="flag">
+    <input type="text" placeholder="UserName" [(ngModel)]="currentcompanyname">
+    <input type="text" placeholder="Password" [(ngModel)]="currentcompanylocation">
+    <button (click)="onUpdate()">Update</button>
+</div>
