@@ -31,7 +31,7 @@ export class PermissionDirective {
   @Input() set appPermission(permission: string) {
     this.userPermission = permission;
 
-    console.log(this.dataService.currentUserRole);
+    // console.log(this.dataService.currentUserRole);
 
     // Check permissions and update the view accordingly
     this.updateView(this.dataService.currentUserRole);
