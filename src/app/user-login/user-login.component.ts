@@ -44,8 +44,9 @@ export class UserLoginComponent {
       alert("please Enter Valid Information");
     }
 
-
-
-  }
+}
+SignUp(){
+  this.router.navigate(['SignUp'])
+}
 
 }
