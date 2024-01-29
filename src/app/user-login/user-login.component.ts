@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { MainServiceService } from '../main-service.service';
 import { loginUserDetailsTypes } from '../types';
@@ -20,6 +20,8 @@ export class UserLoginComponent {
 
   currentUserDetails: loginUserDetailsTypes = { userName: "", userPass: "" };
 
+  ls  = inject(MainServiceService)
+
   Userlogin: any = [];
   
 
@@ -33,13 +35,16 @@ export class UserLoginComponent {
     this.currentUserDetails.userName = this.userName;
     this.currentUserDetails.userPass = this.userPass;
     this.mainservice.currentLoginDetails = this.currentUserDetails
-   
-    localStorage.setItem("datas", JSON.stringify(this.mainservice.userdata));
+    const keyVal="AuthKey"
+    localStorage.setItem('datas', JSON.stringify(this.mainservice.userdata));
+    localStorage.setItem('token', JSON.stringify(keyVal));
 
     this.mainservice.currentLoginDetails = this.currentUserDetails;
 
     this.mainservice.LoginData();
-  
+
+    
+    
 
     if (this.mainservice.areEquel) {
       this.router.navigate(['Dashboard']);
@@ -52,5 +57,7 @@ export class UserLoginComponent {
 SignUp(){
   this.router.navigate(['SignUp'])
 }
+
+
 
 }

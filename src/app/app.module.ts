@@ -35,7 +35,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
     FormsModule,
     CommonModule
   ],
-  providers: [MainServiceService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

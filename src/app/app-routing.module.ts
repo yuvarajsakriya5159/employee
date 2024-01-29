@@ -7,11 +7,14 @@ import { CompanyComponent } from './company/company.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { HomeComponent } from './home/home.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
-import { AuthGuard } from './auth/auth.guard';
+import { CanActivate } from './authGuard.guard';
+ import { CanDeActivate } from './Restriction.guard';
+// import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
   {path:"",component:UserLoginComponent},
-  {path:"Dashboard",component:DashboardComponent,canActivate:[AuthGuard], children:[
+  {path:"Dashboard",component:DashboardComponent,canActivate:[CanActivate],
+  children:[
     {path:"Home",component:HomeComponent},
     {path:"Employee",component:EmployeeComponent},
     {path:"Branch",component:BranchComponent},
