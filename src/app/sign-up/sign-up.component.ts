@@ -23,6 +23,11 @@ export class SignUpComponent {
   }
 
   AddSignUpData() {
+    if(this.username === '' && this.password === '')
+    {
+      alert('fill informations first');
+      return;
+    }
     this.CurrentSignUpDetails.username = this.username;
     this.CurrentSignUpDetails.password = this.password;
     this.CurrentSignUpDetails.RepeatPassword = this.RepeatPassword;
@@ -42,12 +47,16 @@ export class SignUpComponent {
       console.log(this.mainServiceService.userdata)
       this.router.navigate([''])
     }
+
+   
+    
     else {
       return alert("UserName already exist Or your password does not match")
     }
   }
 
   returnToLogin(){
+
     this.router.navigate(['']);
-  }
+}
 }

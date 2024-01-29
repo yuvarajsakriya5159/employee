@@ -21,11 +21,15 @@ export class UserLoginComponent {
   currentUserDetails: loginUserDetailsTypes = { userName: "", userPass: "" };
 
   Userlogin: any = [];
+  
 
   ngOnInit() {
 
   }
   login() {
+
+      
+
     this.currentUserDetails.userName = this.userName;
     this.currentUserDetails.userPass = this.userPass;
     this.mainservice.currentLoginDetails = this.currentUserDetails

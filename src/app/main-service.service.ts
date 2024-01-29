@@ -9,7 +9,7 @@ export class MainServiceService {
   currentLoginDetails: loginUserDetailsTypes = { userName: "", userPass: "" };
   currentUserRole : string = "";
   areEquel = false;
-
+   authPermission:boolean=false;
   constructor() { }
   userdata: any = [
     {
@@ -79,6 +79,8 @@ export class MainServiceService {
 
 
   LoginData() {
+
+     this.authPermission=true;
     this.userdata.find((data: any) => {
       // console.log(data);
       // console.log(this.currentLoginDetails);
