@@ -45,7 +45,7 @@ export class SignUpComponent {
       this.mainServiceService.userdata.push(this.CurrentSignUpDetails)
       console.log('inside if')
       console.log(this.mainServiceService.userdata)
-      this.router.navigate([''])
+      this.router.navigate(['/'])
     }
 
    
@@ -57,6 +57,6 @@ export class SignUpComponent {
 
   returnToLogin(){
 
-    this.router.navigate(['']);
+    this.router.navigate(['/']);
 }
 }

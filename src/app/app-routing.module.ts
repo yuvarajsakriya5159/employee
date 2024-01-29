@@ -8,19 +8,21 @@ import { EmployeeComponent } from './employee/employee.component';
 import { HomeComponent } from './home/home.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { CanActivate } from './authGuard.guard';
- import { CanDeActivate } from './Restriction.guard';
-// import { AuthGuard } from './auth/auth.guard';
+// import { CanDeActivate } from './Restriction.guard';
+
 
 const routes: Routes = [
-  {path:"",component:UserLoginComponent},
+  {path:"",redirectTo:"login",pathMatch:"full"},
+  {path:"login",component:UserLoginComponent},//,canActivate:[CanDeActivate]
+  {path:"SignUp",component:SignUpComponent},
   {path:"Dashboard",component:DashboardComponent,canActivate:[CanActivate],
   children:[
     {path:"Home",component:HomeComponent},
     {path:"Employee",component:EmployeeComponent},
     {path:"Branch",component:BranchComponent},
     {path:"Company",component:CompanyComponent}
-  ]},
-  {path:"SignUp",component:SignUpComponent}
+  ]}
+  
  
 
 ];
