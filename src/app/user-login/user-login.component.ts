@@ -55,7 +55,7 @@ export class UserLoginComponent {
 
 }
 SignUp(){
-  this.router.navigate(['SignUp'])
+  this.router.navigate(['SignUp'])  
 }
 
 
