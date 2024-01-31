@@ -10,6 +10,7 @@ export class DashboardComponent {
 constructor(private route:Router){}
   Logout(){
     localStorage.removeItem("token");
+    localStorage.removeItem("datas");
      this.route.navigate([''])
   }
 }

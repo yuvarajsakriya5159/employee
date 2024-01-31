@@ -20,7 +20,7 @@ export class UserLoginComponent {
 
   currentUserDetails: loginUserDetailsTypes = { userName: "", userPass: "" };
 
-  ls  = inject(MainServiceService)
+
 
   Userlogin: any = [];
   
