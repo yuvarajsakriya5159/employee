@@ -21,6 +21,7 @@ export class PermissionDirective {
       permissions: [],
     }
   ]
+  // currentUserRole: any;
 
   constructor(
     private templateRef: TemplateRef<any>,

@@ -8,6 +8,7 @@ import { EmployeeComponent } from './employee/employee.component';
 import { HomeComponent } from './home/home.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { CanActivate } from './authGuard.guard';
+import { PermissionGardGuard } from './permission_gard/permission-gard.guard';
 // import { CanDeActivate } from './Restriction.guard';
 
 
@@ -18,9 +19,9 @@ const routes: Routes = [
   {path:"Dashboard",component:DashboardComponent,canActivate:[CanActivate],
   children:[
     {path:"Home",component:HomeComponent},
-    {path:"Employee",component:EmployeeComponent},
-    {path:"Branch",component:BranchComponent},
-    {path:"Company",component:CompanyComponent}
+    {path:"Employee",component:EmployeeComponent,canActivate:[PermissionGardGuard],data:{permission:['SuperAdmin','Admin','user']}},
+    {path:"Branch",component:BranchComponent,canActivate:[PermissionGardGuard],data:{permission:['SuperAdmin','Admin']}},
+    {path:"Company",component:CompanyComponent,canActivate:[PermissionGardGuard],data:{permission:['SuperAdmin']}}
   ]}
   
  

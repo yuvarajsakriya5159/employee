@@ -11,6 +11,7 @@ export class MainServiceService {
   areEquel = false;
    authPermission:boolean=false;
   constructor() { }
+  
   userdata: any = [
     {
       username: "yuvraj@123",
@@ -81,8 +82,9 @@ export class MainServiceService {
   LoginData() {
 
      this.authPermission=true;
+     
     this.userdata.find((data: any) => {
-      // console.log(data);
+      // console.log(data); 
       // console.log(this.currentLoginDetails);
 
       if (data.username === this.currentLoginDetails.userName && data.password === this.currentLoginDetails.userPass) {
