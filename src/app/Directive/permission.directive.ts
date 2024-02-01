@@ -46,10 +46,10 @@ export class PermissionDirective {
     
 
     this.roleDescription.find((data: any) => {
-      console.log("15 roleDescription.find")
+      
       if (data.role === currentUserRole) {
         flag = data.permissions.includes(this.userPermission);
-        console.log("16 flag value after roleDescription"+flag)
+        
       }
     })
 
@@ -57,7 +57,7 @@ export class PermissionDirective {
 
     if (flag) {
       this.viewContainer.createEmbeddedView(this.templateRef);
-      console.log("18 if flag true")
+      
     }
   }
 }

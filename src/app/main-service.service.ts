@@ -75,7 +75,7 @@ export class MainServiceService {
       branchname: "BA",
       TotalMember: "4"
       
-    },
+    }
   ];
 
 

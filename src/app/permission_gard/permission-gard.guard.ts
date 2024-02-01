@@ -30,7 +30,6 @@ export class PermissionGardGuard implements CanActivate {
       return true
       }
       else{  
-        alert("");
         return false
         }
       
