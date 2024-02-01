@@ -37,8 +37,6 @@ export class PermissionGardGuard implements CanActivate {
       
    
   }
-  constructor(private mainServiceService:MainServiceService,private router:ActivatedRoute){
-    console.log('this is constructor of permissiongard')
-  }
+  constructor(private mainServiceService:MainServiceService,private router:ActivatedRoute){}
   
 }

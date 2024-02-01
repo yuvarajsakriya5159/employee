@@ -1,5 +1,6 @@
+import { ActivatedRoute } from '@angular/router';
 import { MainServiceService } from './../main-service.service';
-import { Component } from '@angular/core';
+import { Component,} from '@angular/core';
 
 @Component({
   selector: 'app-branch',
@@ -8,7 +9,7 @@ import { Component } from '@angular/core';
 })
 export class BranchComponent {
 
-  constructor(private mainServiceService:MainServiceService){
+  constructor(private mainServiceService:MainServiceService,private route:ActivatedRoute){
 
   }
 
@@ -17,7 +18,9 @@ export class BranchComponent {
   flag : boolean = false;
   currentDataObj : any;
 
-  BranchMainData:any=this.mainServiceService.BranchData;
+ 
+ // BranchMainData:any=this.mainServiceService.BranchData; we load our data using resolver
+ BranchMainData:any=this.route.snapshot.data['data']
 
   DeleteBranch(deleteme:number){
     this.BranchMainData.splice(deleteme,1)

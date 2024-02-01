@@ -80,8 +80,7 @@ export class MainServiceService {
 
 
   LoginData() {
-
-    console.log("4 goto LoginData in service")
+    
     // this.authPermission=true;
       
     this.userdata.find((data: any) => {

@@ -14,6 +14,7 @@ import { MainServiceService } from './main-service.service';
 import { PermissionDirective } from './Directive/permission.directive';
 import { CommonModule } from '@angular/common';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { ResolveGuard } from './permission_gard/resolve.guard';
  
 
 @NgModule({
@@ -35,7 +36,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
     FormsModule,
     CommonModule
   ],
-  providers: [],
+  providers: [ResolveGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
