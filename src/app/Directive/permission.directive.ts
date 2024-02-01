@@ -27,24 +27,29 @@ export class PermissionDirective {
     private templateRef: TemplateRef<any>,
     private viewContainer: ViewContainerRef,
     private dataService: MainServiceService
-  ) { }
+  ){}
 
   @Input() set appPermission(permission: string) {
     this.userPermission = permission;
-
+ 
+    
     // console.log(this.dataService.currentUserRole);
 
     // Check permissions and update the view accordingly
     this.updateView(this.dataService.currentUserRole);
+   
   }
 
   private updateView(currentUserRole: string) {
 
     let flag: boolean = false;
+    
 
     this.roleDescription.find((data: any) => {
+      console.log("15 roleDescription.find")
       if (data.role === currentUserRole) {
         flag = data.permissions.includes(this.userPermission);
+        console.log("16 flag value after roleDescription"+flag)
       }
     })
 
@@ -52,6 +57,7 @@ export class PermissionDirective {
 
     if (flag) {
       this.viewContainer.createEmbeddedView(this.templateRef);
+      console.log("18 if flag true")
     }
   }
 }

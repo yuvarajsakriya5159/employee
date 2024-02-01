@@ -8,29 +8,35 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class PermissionGardGuard implements CanActivate {
+
+  roleof:any;
+  premissiondata:string[]=[];
+  gouardrole:any;
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): boolean
     // Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree
     {
-     
-     console.log(route.data['permission'])
-     console.log(this.mainServiceService.currentUserRole)
-    
-     let premissiondata=route.data['permission']  //store the route permission roles
-     let gouardrole=this.mainServiceService.currentUserRole;
-   
-     if(premissiondata.includes(gouardrole))
+      this.premissiondata=route.data['permission'] 
+      console.log(route.data['permission']) //store the route permission roles
+      //this.gouardrole=this.mainServiceService.currentUserRole;
+      this.gouardrole=sessionStorage.getItem('role');
+      
+     if(this.gouardrole){this. roleof=JSON.parse(this.gouardrole)}
+
+     if(this.premissiondata.includes(this.roleof))
      {
+      
       return true
       }
-      else{
-          alert("you have not access this page");    
+      else{  
+        alert("");
         return false
-          }
+        }
       
       
-    return true;
+      
+   
   }
   constructor(private mainServiceService:MainServiceService,private router:ActivatedRoute){
     console.log('this is constructor of permissiongard')

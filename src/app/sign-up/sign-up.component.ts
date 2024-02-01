@@ -56,8 +56,8 @@ export class SignUpComponent {
   }
 
   returnToLogin(){
-    localStorage.removeItem('datas');
-    localStorage.removeItem('token')
+    // localStorage.removeItem('datas');
+    // localStorage.removeItem('token')
 
     this.router.navigate(['/']);
 }

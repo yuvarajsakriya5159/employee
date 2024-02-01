@@ -14,7 +14,8 @@ import { PermissionGardGuard } from './permission_gard/permission-gard.guard';
 
 const routes: Routes = [
   {path:"",redirectTo:"login",pathMatch:"full"},
-  {path:"login",component:UserLoginComponent},//,canActivate:[CanDeActivate]
+  {path:"login",component:UserLoginComponent
+},//,canActivate:[CanDeActivate]
   {path:"SignUp",component:SignUpComponent},
   {path:"Dashboard",component:DashboardComponent,canActivate:[CanActivate],
   children:[

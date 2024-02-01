@@ -9,7 +9,7 @@ export class MainServiceService {
   currentLoginDetails: loginUserDetailsTypes = { userName: "", userPass: "" };
   currentUserRole : string = "";
   areEquel = false;
-   authPermission:boolean=false;
+  //  authPermission:boolean=false;
   constructor() { }
   
   userdata: any = [
@@ -81,15 +81,21 @@ export class MainServiceService {
 
   LoginData() {
 
-     this.authPermission=true;
-     
+    console.log("4 goto LoginData in service")
+    // this.authPermission=true;
+      
     this.userdata.find((data: any) => {
       // console.log(data); 
       // console.log(this.currentLoginDetails);
 
-      if (data.username === this.currentLoginDetails.userName && data.password === this.currentLoginDetails.userPass) {
+      if (data.username === this.currentLoginDetails.userName && data.password === this.currentLoginDetails.userPass) {  
+       
         this.currentUserRole = data.role;
+      
+        sessionStorage.setItem('role',JSON.stringify(this.currentUserRole))
+        
         this.areEquel = true;
+       
       }
     })
   }
