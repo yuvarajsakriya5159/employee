@@ -10,6 +10,6 @@ export class ResolveGuard implements Resolve <any> {
  
  constructor(private mainServiceService:MainServiceService){}
   resolve(){
-               return this.mainServiceService.BranchData                     
+          return this.mainServiceService.BranchData                     
   }
 }
