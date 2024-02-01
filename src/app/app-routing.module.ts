@@ -22,7 +22,7 @@ const routes: Routes = [
   children:[
     {path:"Home",component:HomeComponent},
     {path:"Employee",component:EmployeeComponent,canActivate:[PermissionGardGuard],data:{permission:['SuperAdmin','Admin','user']}},
-    {path:"Branch",component:BranchComponent,resolve:{data:ResolveGuard}},//canActivate:[PermissionGardGuard], data:{permission:['SuperAdmin','Admin']}
+    {path:"Branch",component:BranchComponent,resolve:{data:ResolveGuard}},//canActivate:[PermissionGardGuard],  data:{permission:['SuperAdmin','Admin']}
     {path:"Company",component:CompanyComponent,canActivate:[PermissionGardGuard],data:{permission:['SuperAdmin']}}
   ]}
   
