@@ -1,4 +1,4 @@
- <div class="container w-25 mt-5 pt-5">
+<!-- <div class="container w-25 mt-5 pt-5">
     <div class="row mt-3">
       <div class="col-12">
         <h1 class="">UserLogin</h1>
@@ -30,7 +30,30 @@
         </div>
        </div> 
     
-  </div> 
+  </div>  -->
 
 
-   
+<body>
+  <section class="container">
+    <div class="login-container">
+      <div class="circle circle-one"></div>
+      <div class="form-container">
+        <img
+          src="https://raw.githubusercontent.com/hicodersofficial/glassmorphism-login-form/master/assets/illustration.png"
+          alt="illustration" class="illustration" />
+        <h1 class="opacity">LOGIN</h1>
+        <div class="form-wrapper">
+          <input type="text" placeholder="USERNAME" [(ngModel)]="userName" />
+          <input type="password" placeholder="PASSWORD" [(ngModel)]="userPass" />
+          <button class="opacity" (click)="login()">SUBMIT</button>
+        </div>
+        <div class="register-forget opacity">
+          <a href="">REGISTER</a>
+          <a>FORGOT PASSWORD</a>
+        </div>
+      </div>
+      <div class="circle circle-two"></div>
+    </div>
+    <div class="theme-btn-container"></div>
+  </section>
+</body>

@@ -15,7 +15,7 @@ export class UserLoginComponent {
 
   }
 
-  userName: string = "";
+  userName: string = "asdas";
   userPass: string = "";
 
   currentUserDetails: loginUserDetailsTypes = { userName: "", userPass: "" };
@@ -45,9 +45,8 @@ export class UserLoginComponent {
     
 
     if (this.mainservice.areEquel) {
-     
+      console.log(this.mainservice.areEquel);
       this.router.navigate(['Dashboard']);
-      
     }
     else {
       alert("please Enter Valid Information");
