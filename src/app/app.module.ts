@@ -15,7 +15,7 @@ import { PermissionDirective } from './Directive/permission.directive';
 import { CommonModule } from '@angular/common';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { ResolveGuard } from './permission_gard/resolve.guard';
- 
+import {HttpClientModule} from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -34,7 +34,8 @@ import { ResolveGuard } from './permission_gard/resolve.guard';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    CommonModule
+    CommonModule,
+    HttpClientModule
   ],
   providers: [ResolveGuard],
   bootstrap: [AppComponent]
