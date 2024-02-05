@@ -1,0 +1,22 @@
+<table class="table table-bordered mt-3">
+    <thead class="thead-light">
+        <tr>
+            <td>No</td>
+            <td>UserName</td>
+            <td>Password</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let Employee of DisplayData">
+    
+            <td>
+                <div>
+                    {{Employee.username}}
+                </div>
+            </td>
+        
+            <td>{{Employee.password}}</td>
+        </tr>
+    </tbody>
+
+</table>

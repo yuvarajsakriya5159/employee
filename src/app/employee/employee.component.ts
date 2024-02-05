@@ -1,3 +1,4 @@
+import { FavoriteDatatypes } from '../types';
 import { MainServiceService } from './../main-service.service';
 import { Component } from '@angular/core';
 
@@ -12,6 +13,7 @@ export class EmployeeComponent {
   currentUserPassword: string = "";
   flag : boolean = false;
   currentDataObj : any;
+  favoriteData:any;
 
   constructor(private mainServiceService: MainServiceService) {
 
@@ -27,7 +29,7 @@ export class EmployeeComponent {
     this.currentUserName = data.username;
     this.currentUserPassword = data.password;
     this.currentDataObj = data;
-
+console.log()
      this.flag = true;
   }
 
@@ -39,6 +41,17 @@ export class EmployeeComponent {
     this.currentUserPassword = "";
 
      this.flag = false;
+  }
+
+  AddFavourite(Favourite:FavoriteDatatypes){
+
+    this.mainServiceService.receive(Favourite)
+  //   this.currentUserName = Favourite.username;
+  //   this.currentUserPassword = Favourite.password;
+  //   this.favoriteData=Favourite;
+  //  console.log(this.favoriteData)
+
+ 
   }
 }
 

@@ -18,7 +18,7 @@ export class PermissionGardGuard implements CanActivate {
     // Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree
     {
       this.premissiondata=route.data['permission'] 
-      console.log(route.data['permission']) //store the route permission roles
+      // console.log(route.data['permission']) //store the route permission roles
       //this.gouardrole=this.mainServiceService.currentUserRole;
       this.gouardrole=sessionStorage.getItem('role');
       

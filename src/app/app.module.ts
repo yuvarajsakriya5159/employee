@@ -16,7 +16,8 @@ import { CommonModule } from '@angular/common';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { ResolveGuard } from './permission_gard/resolve.guard';
 import {HttpClientModule} from '@angular/common/http';
-import { FavouriteComponent } from './Favourite/favourite/favourite.component'
+// import { FavouriteComponent } from './Favourite/favourite/favourite.component';
+import { FavoriteComponent } from './Favorite/favorite/favorite.component'
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { FavouriteComponent } from './Favourite/favourite/favourite.component'
     HomeComponent,
     PermissionDirective,
     SignUpComponent,
-    FavouriteComponent,
+    // FavouriteComponent,
+    FavoriteComponent,
     
   ],
   imports: [

@@ -1,9 +1,11 @@
-import { Injectable } from '@angular/core';
-import { loginUserDetailsTypes } from './types';
+import { EventEmitter, Injectable } from '@angular/core';
+import { FavoriteDatatypes, loginUserDetailsTypes } from './types';
+import { BehaviorSubject, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class MainServiceService {
 
   currentLoginDetails: loginUserDetailsTypes = { userName: "", userPass: "" };
@@ -12,7 +14,15 @@ export class MainServiceService {
   //  authPermission:boolean=false;
   constructor() { }
   
-  userdata: any = [
+  favoritedata = new BehaviorSubject<FavoriteDatatypes>({ username: "yuvraj@123",
+  password: "1234",
+  role: "SuperAdmin" })
+
+  receive(data:FavoriteDatatypes){
+    this.favoritedata.next(data)
+  }
+ 
+   userdata: any = [
     {
       username: "yuvraj@123",
       password: "1234",
@@ -100,3 +110,4 @@ export class MainServiceService {
   }
   
 }
+

@@ -6,6 +6,7 @@
             <td>Password</td>
             <td *appPermission="'edit'">Edit</td>
             <td *appPermission="'delete'">Delete</td>
+            <td *appPermission="'delete'">Add Favourites</td>
         </tr>
     </thead>
     <tbody>
@@ -22,7 +23,10 @@
                 <button class="btn btn-success" (click)="Editdata(Employee)">Edit</button>
             </td>
             <td *appPermission="'delete'">
-                <button class="btn btn-success" (click)="DeleteEmp(no)">Delete</button>
+                <button class="btn btn-danger" (click)="DeleteEmp(no)">Delete</button>
+            </td>
+            <td *appPermission="'delete'">
+                <button class="btn btn-success" (click)="AddFavourite(Employee)">favorite</button>
             </td>
         </tr>
     </tbody>

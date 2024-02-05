@@ -10,6 +10,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { CanActivate } from './authGuard.guard';
 import { PermissionGardGuard } from './permission_gard/permission-gard.guard';
 import { ResolveGuard } from './permission_gard/resolve.guard';
+import { FavoriteComponent } from './Favorite/favorite/favorite.component';
 // import { CanDeActivate } from './Restriction.guard';
 
 
@@ -23,7 +24,9 @@ const routes: Routes = [
     {path:"Home",component:HomeComponent},
     {path:"Employee",component:EmployeeComponent,canActivate:[PermissionGardGuard],data:{permission:['SuperAdmin','Admin','user']}},
     {path:"Branch",component:BranchComponent,resolve:{data:ResolveGuard}},//canActivate:[PermissionGardGuard],  data:{permission:['SuperAdmin','Admin']}
-    {path:"Company",component:CompanyComponent,canActivate:[PermissionGardGuard],data:{permission:['SuperAdmin']}}
+    {path:"Company",component:CompanyComponent,canActivate:[PermissionGardGuard],data:{permission:['SuperAdmin']}},
+    {path:"Favorite",component:FavoriteComponent},
+    
   ]}
   
  
