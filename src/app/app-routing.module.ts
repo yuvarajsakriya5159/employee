@@ -20,6 +20,7 @@ const routes: Routes = [
   {path:"SignUp",component:SignUpComponent},
   {path:"Dashboard",component:DashboardComponent,canActivate:[CanActivate],
   children:[
+    {path:"",component:HomeComponent},
     {path:"Home",component:HomeComponent},
     {path:"Employee",component:EmployeeComponent,canActivate:[PermissionGardGuard],data:{permission:['SuperAdmin','Admin','user']}},
     {path:"Branch",component:BranchComponent,resolve:{data:ResolveGuard}},//canActivate:[PermissionGardGuard],  data:{permission:['SuperAdmin','Admin']}

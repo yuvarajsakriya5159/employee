@@ -1,6 +1,7 @@
 import { EventEmitter, Injectable } from '@angular/core';
 import { FavoriteDatatypes, loginUserDetailsTypes } from './types';
-import { BehaviorSubject, Subject } from 'rxjs';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ export class MainServiceService {
   currentUserRole : string = "";
   areEquel = false;
   //  authPermission:boolean=false;
-  constructor() { }
+  constructor(private http:HttpClient) { }
   
   favoritedata = new BehaviorSubject<FavoriteDatatypes>({ username: "yuvraj@123",
   password: "1234",
@@ -108,6 +109,8 @@ export class MainServiceService {
       }
     })
   }
-  
+  userdataObserveble=new Observable<FavoriteDatatypes>((observer)=>{  //create the observable and observe the value of the observable using next(data)
+    observer.next(this.userdata);
+  })
 }
 
