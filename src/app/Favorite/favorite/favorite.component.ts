@@ -28,6 +28,6 @@ export class FavoriteComponent {
     .subscribe((item :FavoriteDatatypes)=>{
       this.DisplayData.push(item);
     })
-  console.log(this.DisplayData)
+  
   }
 }

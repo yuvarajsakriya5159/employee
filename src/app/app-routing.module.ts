@@ -16,8 +16,7 @@ import { FavoriteComponent } from './Favorite/favorite/favorite.component';
 
 const routes: Routes = [
   {path:"",redirectTo:"login",pathMatch:"full"},
-  {path:"login",component:UserLoginComponent
-},//,canActivate:[CanDeActivate]
+  {path:"login",component:UserLoginComponent,children:[]},//,canActivate:[CanDeActivate]
   {path:"SignUp",component:SignUpComponent},
   {path:"Dashboard",component:DashboardComponent,canActivate:[CanActivate],
   children:[

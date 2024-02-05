@@ -1,6 +1,6 @@
-<form action="action_page.php" style="border:1px solid #ccc" >  <!--  #formData="ngForm" (ngSubmit)="SignUpData(formData.value)" -->
+<!-- <form action="action_page.php" style="border:1px solid #ccc" >   -->
   <div class="container">
-    <h1>Sign Up</h1>
+    <h2>Sign Up</h2>
     <p>Please fill in this form to create an account.</p>
     <hr>
     <div class="row mt-3">
@@ -17,7 +17,7 @@
       </div>
     </div>
 
-
+ 
       <div class="row mt-3">
         <div class="col-12">
           <label for="psw-repeat"><b>Repeat Password</b></label>
@@ -33,11 +33,11 @@
       
         </div>
       </div>
-      <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+      <p>By creating an account you agree to our <a style="color:dodgerblue">Terms & Privacy</a>.</p>
 
     <div class="">
-      <button type="button" class="btn btn-primary" (click)="returnToLogin()">Cancel</button>
+      <button type="button" class="btn btn-primary" (click)="returnToLogin()">Cancel</button> &nbsp;&nbsp;
       <button type="submit" class="btn btn-primary" (click)="AddSignUpData()">Sign In</button>
     </div>
   </div>
-</form>
+<!-- </form> -->
