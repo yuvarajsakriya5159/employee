@@ -15,7 +15,7 @@ export class UserLoginComponent {
 
   }
 
-  userName: string = "asdas";
+  userName: string = "";
   userPass: string = "";
 
   currentUserDetails: loginUserDetailsTypes = { userName: "", userPass: "" };

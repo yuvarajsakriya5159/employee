@@ -1,7 +1,7 @@
 import { Observable, map } from 'rxjs';
 import { MainServiceService } from './../main-service.service';
 import { Component,OnInit } from '@angular/core';
-
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -9,7 +9,7 @@ import { Component,OnInit } from '@angular/core';
 })
 export class HomeComponent {
 
-  constructor(private mainServiceService:MainServiceService){ }
+  constructor(private mainServiceService:MainServiceService,private http:HttpClient){ }
   myObservable=new Observable((observer)=>{
       console.log("observeble start");
       setTimeout(()=>{observer.next("1") },1000)

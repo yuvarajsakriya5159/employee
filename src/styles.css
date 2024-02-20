@@ -64,3 +64,6 @@
     -o-transform: scale(1.02);
 }
 
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

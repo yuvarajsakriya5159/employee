@@ -17,7 +17,13 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { ResolveGuard } from './permission_gard/resolve.guard';
 import {HttpClientModule} from '@angular/common/http';
 // import { FavouriteComponent } from './Favourite/favourite/favourite.component';
-import { FavoriteComponent } from './Favorite/favorite/favorite.component'
+import { FavoriteComponent } from './Favorite/favorite/favorite.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatIconModule } from '@angular/material/icon';
+
 
 @NgModule({
   declarations: [
@@ -39,7 +45,10 @@ import { FavoriteComponent } from './Favorite/favorite/favorite.component'
     AppRoutingModule,
     FormsModule,
     CommonModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatSlideToggleModule,
+    MatButtonModule, MatDividerModule, MatIconModule
   ],
   providers: [ResolveGuard],
   bootstrap: [AppComponent]
